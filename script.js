@@ -13,97 +13,97 @@ const posts = [
     {
         year: '2026',
         title: 'September 29, 2026',
-        file: 'images/09292026.jpg',
+        file: 'images/09292026.jpeg',
         caption: 'Official Casa de Mojo lodging announcement.'
     },
     {
         year: '2025',
         title: 'October 11, 2025',
-        file: 'images/10112025.jpg',
+        file: 'images/10112025.jpeg',
         caption: 'Official Casa de Mojo lodging announcement.'
     },
     {
         year: '2025',
         title: 'May 19, 2025',
-        file: 'images/05192025.jpg',
+        file: 'images/05192025.jpeg',
         caption: 'Official Casa de Mojo lodging announcement.'
     },
     {
         year: '2025',
         title: 'January 31, 2025',
-        file: 'images/01312025.jpg',
+        file: 'images/01312025.jpeg',
         caption: 'Official Casa de Mojo lodging announcement.'
     },
     {
         year: '2024',
         title: 'September 28, 2024',
-        file: 'images/09282024.jpg',
+        file: 'images/09282024.jpeg',
         caption: 'Official Casa de Mojo lodging announcement.'
     },
     {
         year: '2024',
         title: 'August 7, 2024',
-        file: 'images/08072024.jpg',
+        file: 'images/08072024.jpeg',
         caption: 'Official Casa de Mojo lodging announcement.'
     },
     {
         year: '2024',
         title: 'April 7, 2024',
-        file: 'images/04072024.jpg',
+        file: 'images/04072024.jpeg',
         caption: 'Official Casa de Mojo lodging announcement.'
     },
     {
         year: '2024',
         title: 'January 21, 2024',
-        file: 'images/01212024.jpg',
+        file: 'images/01212024.jpeg',
         caption: 'Official Casa de Mojo lodging announcement.'
     },
     {
         year: '2023',
         title: 'November 22, 2023',
-        file: 'images/11222023.jpg',
+        file: 'images/11222023.jpeg',
         caption: 'Official Casa de Mojo lodging announcement.'
     },
     {
         year: '2023',
         title: 'July 19, 2023',
-        file: 'images/07192023.jpg',
+        file: 'images/07192023.jpeg',
         caption: 'Official Casa de Mojo lodging announcement.'
     },
     {
         year: '2023',
         title: 'February 9, 2023',
-        file: 'images/02092023.jpg',
+        file: 'images/02092023.jpeg',
         caption: 'Official Casa de Mojo lodging announcement.'
     },
     {
         year: '2022',
         title: 'October 4, 2022',
-        file: 'images/10042022.jpg',
+        file: 'images/10042022.jpeg',
         caption: 'Official Casa de Mojo lodging announcement.'
     },
     {
         year: '2022',
         title: 'September 25, 2022',
-        file: 'images/09252022.jpg',
+        file: 'images/09252022.jpeg',
         caption: 'Official Casa de Mojo lodging announcement.'
     },
     {
         year: '2022',
         title: 'July 22, 2022',
-        file: 'images/07222022.jpg',
+        file: 'images/07222022.jpeg',
         caption: 'Official Casa de Mojo lodging announcement.'
     },
     {
         year: '2021',
         title: 'June 30, 2021',
-        file: 'images/06302021.jpg',
+        file: 'images/06302021.jpeg',
         caption: 'Official Casa de Mojo lodging announcement.'
     },
     {
         year: '2021',
         title: 'January 2, 2021',
-        file: 'images/01022021.jpg',
+        file: 'images/01022021.jpeg',
         caption: 'Official Casa de Mojo lodging announcement.'
     }
 ];
@@ -128,7 +128,9 @@ const localDate = new Date(
 checkin.min = localDate;
 checkout.min = localDate;
 
-/* Update checkout restrictions */
+/* =========================================
+   UPDATE CHECKOUT RESTRICTIONS
+========================================= */
 
 checkin.addEventListener('change', () => {
 
@@ -141,7 +143,9 @@ checkin.addEventListener('change', () => {
     checkout.setCustomValidity('');
 });
 
-/* Process fake reservation */
+/* =========================================
+   PROCESS FAKE RESERVATION
+========================================= */
 
 form.addEventListener('submit', (event) => {
 
@@ -193,7 +197,9 @@ const lightbox = document.querySelector('#lightbox');
 const lightboxImage = document.querySelector('#lightbox-image');
 const lightboxCaption = document.querySelector('#lightbox-caption');
 
-/* Show empty state only when there are no posts */
+/* =========================================
+   ARCHIVE EMPTY STATE
+========================================= */
 
 if (!posts.length) {
     empty.hidden = false;
@@ -201,7 +207,9 @@ if (!posts.length) {
     empty.hidden = true;
 }
 
-/* Generate screenshot cards */
+/* =========================================
+   GENERATE SCREENSHOT CARDS
+========================================= */
 
 for (const post of posts) {
 
@@ -251,7 +259,9 @@ for (const post of posts) {
 
     grid.append(card);
 
-    /* Open full-size screenshot */
+    /* =====================================
+       OPEN FULL-SIZE SCREENSHOT
+    ===================================== */
 
     button.addEventListener('click', () => {
 
@@ -269,7 +279,7 @@ for (const post of posts) {
    IMAGE LIGHTBOX CONTROLS
 ========================================= */
 
-/* Close lightbox using close button */
+/* Close using the close button */
 
 document.querySelector('#close-lightbox')
     .addEventListener('click', () => {
@@ -277,7 +287,7 @@ document.querySelector('#close-lightbox')
         lightbox.close();
     });
 
-/* Close lightbox by clicking outside image */
+/* Close by clicking outside the image */
 
 lightbox.addEventListener('click', (event) => {
 
@@ -285,3 +295,4 @@ lightbox.addEventListener('click', (event) => {
         lightbox.close();
     }
 });
+
