@@ -4,14 +4,14 @@
 
 <head>
     <meta charset="utf-8">
+
     <meta
         name="viewport"
         content="width=device-width, initial-scale=1"
     >
-    <meta
-        name="theme-color"
-        content="#123b32"
-    >
+
+    <meta name="theme-color" content="#103a2b">
+
     <meta
         name="description"
         content="Casa de Mojo: Homecoming lodging availability and historical reservation notices."
@@ -23,25 +23,25 @@
         rel="preconnect"
         href="https://fonts.googleapis.com"
     >
+
     <link
         rel="preconnect"
         href="https://fonts.gstatic.com"
         crossorigin
     >
+
     <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700;1,800&family=Roboto+Slab:wght@700;800;900&display=swap"
         rel="stylesheet"
     >
-    <link
-        rel="stylesheet"
-        href="style.css"
-    >
+
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
     <!-- =====================================
-         HEADER / NAVIGATION
+         HEADER
     ====================================== -->
 
     <header class="topbar">
@@ -58,57 +58,84 @@
     </header>
 
 
-    <!-- =====================================
-         MAIN CONTENT
-    ====================================== -->
-
     <main id="top">
 
-
         <!-- =================================
-             HERO SECTION
+             HOMECOMING HERO
         ================================== -->
 
         <section class="hero">
 
-            <div class="hero-ornament">
-                ✦ &nbsp; ESTABLISHED IN THE ART OF SAYING NO &nbsp; ✦
+            <div class="hero-texture" aria-hidden="true"></div>
+
+            <div class="hero-stripe hero-stripe-top"
+                 aria-hidden="true"></div>
+
+            <div class="hero-stripe hero-stripe-bottom"
+                 aria-hidden="true"></div>
+
+            <div class="hero-content">
+
+                <p class="hero-location">
+                    TALLAHASSEE, FLORIDA
+                </p>
+
+                <div class="homecoming-pill">
+                    HOMECOMING 2026
+                </div>
+
+                <div class="hero-title-wrap">
+
+                    <h1>
+                        <span class="hero-title-main">
+                            CASA
+                        </span>
+
+                        <span class="hero-title-script">
+                            de Mojo
+                        </span>
+                    </h1>
+
+                    <div class="vacancy-stamp">
+                        <span>NO</span>
+                        <span>VACANCY</span>
+                    </div>
+
+                </div>
+
+                <p class="hero-quote">
+                    There will be no lodging at mi casa.
+                </p>
+
+                <p class="hero-sub">
+                    HOMECOMING ACCOMMODATIONS<br>
+                    EXCLUSIVELY UNAVAILABLE.
+                </p>
+
+                <a
+                    href="#booking"
+                    class="button button-gold"
+                >
+                    EXPLORE AVAILABILITY
+                    <span aria-hidden="true">→</span>
+                </a>
+
+                <p class="hero-foot">
+                    A HOME AWAY FROM YOUR HOME?
+                    NOT THIS ONE.
+                </p>
+
             </div>
 
-            <p class="eyebrow">
-                WELCOME TO YOUR NEXT NON-DESTINATION
-            </p>
-
-            <h1>
-                Casa<br>
-                <em>de Mojo</em>
-            </h1>
-
-            <p class="hero-sub">
-                There will be no lodging at mi casa.<br>
-                Homecoming accommodations exclusively unavailable.
-            </p>
-
-            <a
-                href="#booking"
-                class="button button-gold"
-            >
-                Explore Availability
-
-                <span aria-hidden="true">
-                    ↗
-                </span>
-            </a>
-
-            <p class="hero-foot">
-                A HOME AWAY FROM YOUR HOME? NOT THIS ONE.
-            </p>
+            <div class="hero-side-label" aria-hidden="true">
+                THE 850 · NO ROOM AT THE INN
+            </div>
 
         </section>
 
 
         <!-- =================================
-             RESERVATION SECTION
+             RESERVATION DESK
         ================================== -->
 
         <section id="booking" class="booking-wrap">
@@ -124,16 +151,14 @@
                 </h2>
 
                 <p>
-                    We look forward to declining your reservation.
+                    We look forward to declining
+                    your reservation.
                 </p>
 
             </div>
 
 
-            <!-- BOOKING FORM -->
-
             <form id="booking-form" class="booking-card">
-
 
                 <!-- CHECK-IN -->
 
@@ -191,6 +216,7 @@
                             3 guests (ikyfl)
                         </option>
 
+
                     </select>
 
                 </div>
@@ -208,14 +234,13 @@
             </form>
 
 
-            <!-- PRIVACY NOTICE -->
-
             <p class="privacy-note">
-                For entertainment only. Dates and guest counts stay on your device.
+                For entertainment only.
+                Dates and guest counts stay on your device.
             </p>
 
 
-            <!-- RESERVATION DENIAL RESULT -->
+            <!-- RESERVATION RESPONSE -->
 
             <div
                 id="result"
@@ -238,9 +263,10 @@
                 </h2>
 
                 <p>
-                    Thank you for your interest in la Casa de Mojo.
-                    Unfortunately, no rooms are available for your
-                    requested dates. Or any other dates.
+                    Thank you for your interest in
+                    la Casa de Mojo. Unfortunately,
+                    no rooms are available for your
+                    requested dates. Or any other dates. Ever.
                 </p>
 
                 <div class="result-meta">
@@ -285,9 +311,11 @@
                 </h2>
 
                 <p>
-                    For years, the management has made the policy
-                    abundantly clear. Still, inquiries persist.
-                    Please consult the historical record below.
+                    For years, we have made
+                    the policy abundantly clear.
+                    Still, inquiries persist.
+                    Please consult the historical
+                    record below.
                 </p>
 
                 <span class="policy-seal">
@@ -300,7 +328,7 @@
 
 
         <!-- =================================
-             HISTORICAL ANNOUNCEMENT ARCHIVE
+             DENIAL ARCHIVES
         ================================== -->
 
         <section id="archive" class="archive-section">
@@ -316,22 +344,19 @@
                 </h2>
 
                 <p>
-                    Actual announcements from the management,
-                    preserved for future generations of hopeful guests.
+                    Actual announcements from the
+                    management, preserved for future
+                    generations of hopeful guests.
                 </p>
 
             </div>
 
-
-            <!-- SCREENSHOTS INSERTED BY JAVASCRIPT -->
 
             <div
                 id="archive-grid"
                 class="archive-grid"
             ></div>
 
-
-            <!-- EMPTY ARCHIVE MESSAGE -->
 
             <p
                 id="archive-empty"
@@ -358,7 +383,7 @@
         </div>
 
         <p>
-            ThANK YOU FOR NOT STAYING WITH US.
+            Thank you for not staying with us.
         </p>
 
         <small>
@@ -392,12 +417,7 @@
     </dialog>
 
 
-    <!-- =====================================
-         JAVASCRIPT
-    ====================================== -->
-
     <script src="script.js"></script>
 
 </body>
-
 </html>
