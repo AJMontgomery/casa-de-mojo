@@ -11,91 +11,91 @@
 
 const posts = [
     {
-        year: '2026',
+        year: '',
         title: 'January 29, 2026',
         file: 'images/01292026.jpeg',
         caption: 'Official Casa de Mojo lodging announcement.'
     },
     {
-        year: '2025',
+        year: '',
         title: 'October 11, 2025',
         file: 'images/10112025.jpeg',
         caption: 'Official Casa de Mojo lodging announcement.'
     },
     {
-        year: '2025',
+        year: '',
         title: 'May 19, 2025',
         file: 'images/05192025.jpeg',
         caption: 'Official Casa de Mojo lodging announcement.'
     },
     {
-        year: '2024',
+        year: '',
         title: 'September 28, 2024',
         file: 'images/09282024.jpeg',
         caption: 'Official Casa de Mojo lodging announcement.'
     },
     {
-        year: '2024',
+        year: '',
         title: 'August 7, 2024',
         file: 'images/08072024.jpeg',
         caption: 'Official Casa de Mojo lodging announcement.'
     },
     {
-        year: '2024',
+        year: '',
         title: 'April 7, 2024',
         file: 'images/04072024.jpeg',
         caption: 'Official Casa de Mojo lodging announcement.'
     },
     {
-        year: '2024',
+        year: '',
         title: 'January 21, 2024',
         file: 'images/01212024.jpeg',
         caption: 'Official Casa de Mojo lodging announcement.'
     },
     {
-        year: '2023',
+        year: '',
         title: 'November 22, 2023',
         file: 'images/11222023.jpeg',
         caption: 'Official Casa de Mojo lodging announcement.'
     },
     {
-        year: '2023',
+        year: '',
         title: 'July 19, 2023',
         file: 'images/07192023.jpeg',
         caption: 'Official Casa de Mojo lodging announcement.'
     },
     {
-        year: '2023',
+        year: '',
         title: 'February 9, 2023',
         file: 'images/02092023.jpeg',
         caption: 'Official Casa de Mojo lodging announcement.'
     },
     {
-        year: '2022',
+        year: '',
         title: 'October 4, 2022',
         file: 'images/10042022.jpeg',
         caption: 'Official Casa de Mojo lodging announcement.'
     },
     {
-        year: '2022',
+        year: '',
         title: 'January 25, 2022',
         file: 'images/09252022.jpeg',
         caption: 'Official Casa de Mojo lodging announcement.'
     },
     {
-        year: '2022',
+        year: '',
         title: 'July 07, 2022',
         file: 'images/07072022.jpeg',
         caption: 'Official Casa de Mojo lodging announcement.'
     },
     {
-        year: '2021',
+        year: '',
         title: 'June 30, 2021',
         file: 'images/06302021.jpeg',
         caption: 'Official Casa de Mojo lodging announcement.'
     },
     {
-        year: '2021',
+        year: '',
         title: 'January 2, 2021',
         file: 'images/01022021.jpeg',
         caption: 'Official Casa de Mojo lodging announcement.'
