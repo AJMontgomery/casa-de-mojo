@@ -1,18 +1,19 @@
 
 /* =========================================
    CASA DE MOJO
-   FAMU HOMECOMING INSPIRED THEME
-   Orange • Green • Cream
+   HOMECOMING 2026
+   RETRO TALLAHASSEE MOTEL THEME
 ========================================= */
 
+
 /* =========================================
-   GLOBAL COLORS
+   COLORS
 ========================================= */
 
 :root {
     --orange: #F26A21;
     --orange-dark: #C94F10;
-    --orange-light: #FFB278;
+    --orange-light: #FFAD75;
 
     --green: #176B45;
     --green-light: #248556;
@@ -23,16 +24,14 @@
     --cream-dark: #F2E4D1;
 
     --ink: #193A30;
-    --charcoal: #25251F;
     --muted: #706F65;
-
-    /* Compatibility with existing styles */
 
     --gold: var(--orange);
 }
 
+
 /* =========================================
-   GLOBAL RESET
+   RESET
 ========================================= */
 
 * {
@@ -65,8 +64,13 @@ a {
     color: white;
 }
 
+[hidden] {
+    display: none !important;
+}
+
+
 /* =========================================
-   HEADER / NAVIGATION
+   HEADER
 ========================================= */
 
 .topbar {
@@ -74,137 +78,355 @@ a {
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
-    padding: 1.15rem max(5vw, 1rem);
+
+    padding: 1rem max(5vw, 1rem);
 
     background: var(--cream);
-    border-bottom: 3px solid var(--orange);
+    border-bottom: 5px solid var(--orange);
 }
 
 .wordmark {
     text-decoration: none;
-    font-weight: 700;
-    font-size: .85rem;
-    letter-spacing: .13em;
+    font-family: 'Roboto Slab', Georgia, serif;
+    font-size: 1.15rem;
+    font-weight: 900;
+    letter-spacing: -.04em;
     color: var(--dark);
 }
 
 .mark {
     color: var(--orange);
     font-size: 1.3rem;
+    margin-right: .4rem;
 }
 
 .top-note {
-    font-size: .64rem;
-    letter-spacing: .14em;
-    color: var(--green);
-    font-weight: 700;
+    font-size: .65rem;
+    letter-spacing: .18em;
+    font-weight: 800;
+    color: var(--dark);
 }
 
+
 /* =========================================
-   HERO SECTION
+   HOMECOMING HERO
 ========================================= */
 
 .hero {
+    position: relative;
+    isolation: isolate;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 750px;
+    padding: 5.5rem 1.25rem;
+
+    overflow: hidden;
+    text-align: center;
+    color: var(--cream);
+
     background:
         radial-gradient(
-            circle at 50% 20%,
-            #248556 0%,
-            #176B45 38%,
-            #103A2B 75%,
+            ellipse at 50% 30%,
+            rgba(36, 133, 86, .85),
+            transparent 60%
+        ),
+        radial-gradient(
+            circle at 0% 85%,
+            rgba(242, 106, 33, .25),
+            transparent 40%
+        ),
+        radial-gradient(
+            circle at 100% 15%,
+            rgba(242, 106, 33, .22),
+            transparent 40%
+        ),
+        linear-gradient(
+            140deg,
+            #092B20 0%,
+            #176B45 48%,
             #092B20 100%
         );
+}
 
-    min-height: 600px;
+
+/* Vintage printed texture */
+
+.hero-texture {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+
+    pointer-events: none;
+
+    opacity: .16;
+
+    background-image:
+        repeating-linear-gradient(
+            0deg,
+            transparent 0px,
+            transparent 3px,
+            rgba(0, 0, 0, .15) 4px
+        ),
+        repeating-linear-gradient(
+            90deg,
+            transparent 0px,
+            transparent 5px,
+            rgba(255, 244, 230, .07) 6px
+        );
+}
+
+
+/* Decorative orange stripes */
+
+.hero-stripe {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 12px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            var(--orange) 0 55%,
+            var(--cream) 55% 70%,
+            var(--green-light) 70% 100%
+        );
+}
+
+.hero-stripe-top {
+    top: 0;
+}
+
+.hero-stripe-bottom {
+    bottom: 0;
+}
+
+
+/* Hero content */
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    max-width: 900px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* Tallahassee heading */
+
+.hero-location {
+    margin: 0 0 1rem;
+
+    color: var(--cream);
+
+    font-size: clamp(.7rem, 1.5vw, 1rem);
+    font-weight: 800;
+    letter-spacing: .4em;
+}
+
+
+/* Homecoming badge */
+
+.homecoming-pill {
+    display: inline-block;
+
+    padding: .65rem 1.8rem;
+
+    border-radius: 100px;
+
+    background: var(--orange);
+    color: var(--deep-green);
+
+    font-family: 'Roboto Slab', Georgia, serif;
+    font-size: clamp(.75rem, 1.5vw, 1.1rem);
+    font-weight: 900;
+    letter-spacing: .12em;
+
+    transform: rotate(-2deg);
+
+    box-shadow:
+        4px 5px 0 rgba(9, 43, 32, .55);
+}
+
+
+/* Main title area */
+
+.hero-title-wrap {
+    position: relative;
+
+    width: 100%;
+    margin: 1.5rem 0;
+}
+
+.hero h1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin: 0;
+
+    line-height: .88;
+}
+
+
+/* CASA collegiate lettering */
+
+.hero-title-main {
+    display: block;
+
+    font-family: 'Roboto Slab', Georgia, serif;
+    font-size: clamp(5rem, 16vw, 12rem);
+    font-weight: 900;
+    letter-spacing: -.08em;
+
+    color: var(--cream);
+
+    -webkit-text-stroke: 2px var(--deep-green);
+
+    text-shadow:
+        3px 3px 0 var(--orange),
+        6px 6px 0 var(--dark),
+        9px 9px 0 var(--orange-dark);
+}
+
+
+/* de Mojo script lettering */
+
+.hero-title-script {
+    display: block;
+
+    position: relative;
+    z-index: 2;
+
+    margin-top: -.25rem;
+
+    font-family: 'Playfair Display', Georgia, serif;
+    font-style: italic;
+    font-size: clamp(4.5rem, 13vw, 10rem);
+    font-weight: 800;
+    letter-spacing: -.075em;
+
+    color: var(--orange);
+
+    -webkit-text-stroke: 1px var(--cream);
+
+    text-shadow:
+        3px 3px 0 var(--deep-green),
+        5px 5px 0 var(--cream),
+        8px 8px 0 var(--deep-green);
+
+    transform: rotate(-4deg);
+}
+
+
+/* No Vacancy stamp */
+
+.vacancy-stamp {
+    position: absolute;
+    top: 6%;
+    right: -4%;
 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 
-    text-align: center;
-    padding: 5rem 1rem;
+    width: 140px;
+    height: 140px;
+
+    border: 5px double var(--orange-light);
+    border-radius: 50%;
+
+    color: var(--orange-light);
+
+    font-family: 'Roboto Slab', Georgia, serif;
+    font-size: 1.5rem;
+    font-weight: 900;
+    line-height: 1.1;
+
+    transform: rotate(15deg);
+
+    opacity: .9;
+}
+
+.vacancy-stamp span:last-child {
+    font-size: 1rem;
+}
+
+
+/* Main slogan */
+
+.hero-quote {
+    display: inline-block;
+
+    max-width: 95%;
+
+    margin: 1rem 0 1.5rem;
+    padding: .65rem 1.5rem;
+
+    background: var(--cream);
+    color: var(--dark);
+
+    font-size: clamp(1rem, 2.5vw, 1.6rem);
+    font-weight: 800;
+    line-height: 1.4;
+
+    transform: rotate(-1deg);
+}
+
+
+/* Supporting copy */
+
+.hero-sub {
+    margin: 0 0 1.8rem;
 
     color: var(--cream);
 
-    position: relative;
-    overflow: hidden;
-}
-
-/* Decorative background elements */
-
-.hero::before,
-.hero::after {
-    content: '✦';
-
-    position: absolute;
-
-    color: rgba(242, 106, 33, 0.12);
-    font-size: 18rem;
-
-    top: 5%;
-    left: -5%;
-
-    pointer-events: none;
-}
-
-.hero::after {
-    left: auto;
-    right: -5%;
-    top: 35%;
-}
-
-/* Eyebrow labels */
-
-.hero-ornament,
-.eyebrow {
-    letter-spacing: .22em;
-    font-size: .68rem;
+    font-size: .8rem;
     font-weight: 700;
-}
-
-.hero-ornament {
-    color: var(--orange-light);
-    margin-bottom: 2rem;
-}
-
-/* Main title */
-
-.hero h1 {
-    font-size: clamp(4rem, 10vw, 8rem);
-    line-height: .98;
-    font-weight: 500;
-    letter-spacing: -.045em;
-
-    margin: 1.1rem 0;
-
-    position: relative;
-    z-index: 1;
-}
-
-.hero h1 em {
-    font-weight: 500;
-    color: var(--orange-light);
-}
-
-/* Hero description */
-
-.hero-sub {
-    font-size: 1rem;
+    letter-spacing: .25em;
     line-height: 1.8;
-    color: #F8EBDD;
-
-    max-width: 650px;
-
-    position: relative;
-    z-index: 1;
 }
+
+
+/* Bottom slogan */
 
 .hero-foot {
-    font-size: .65rem;
-    letter-spacing: .2em;
+    margin: 2rem 0 0;
+
     color: var(--orange-light);
-    margin-top: 3rem;
+
+    font-size: .7rem;
+    font-weight: 800;
+    letter-spacing: .22em;
+    line-height: 1.8;
 }
+
+
+/* Side decoration */
+
+.hero-side-label {
+    position: absolute;
+    bottom: 2rem;
+    right: 1.5rem;
+
+    color: rgba(255, 244, 230, .5);
+
+    font-size: .6rem;
+    font-weight: 800;
+    letter-spacing: .2em;
+
+    writing-mode: vertical-rl;
+}
+
 
 /* =========================================
    BUTTONS
@@ -217,25 +439,28 @@ a {
 
     gap: 1rem;
 
+    padding: 1.1rem 1.7rem;
+
     border: 0;
+
+    font-family: 'DM Sans', sans-serif;
+    font-size: .78rem;
+    font-weight: 800;
+    letter-spacing: .1em;
+
     text-decoration: none;
+    text-align: center;
+
     cursor: pointer;
-
-    font-weight: 700;
-    font-size: .75rem;
-    letter-spacing: .09em;
-
-    padding: 1.15rem 1.8rem;
 
     transition:
         transform .2s ease,
-        filter .2s ease,
-        background .2s ease;
+        background .2s ease,
+        box-shadow .2s ease;
 }
 
 .button:hover {
-    transform: translateY(-2px);
-    filter: brightness(1.06);
+    transform: translateY(-3px);
 }
 
 .button:focus-visible {
@@ -243,28 +468,25 @@ a {
     outline-offset: 4px;
 }
 
-/* Orange primary button */
-
 .button-gold {
     background: var(--orange);
     color: var(--deep-green);
 
-    margin-top: 1.4rem;
+    border: 2px solid var(--cream);
 
-    position: relative;
-    z-index: 1;
+    box-shadow:
+        5px 5px 0 var(--deep-green);
 }
 
 .button-gold:hover {
     background: var(--orange-light);
 }
 
-/* Green reservation button */
-
 .button-green {
+    min-height: 57px;
+
     background: var(--green);
     color: white;
-    min-height: 57px;
 }
 
 .button-green:hover {
@@ -272,14 +494,13 @@ a {
     color: var(--deep-green);
 }
 
-/* Outline button */
-
 .button-outline {
-    border: 2px solid var(--green);
-    color: var(--green);
-    background: transparent;
-
     margin-top: 1.2rem;
+
+    border: 2px solid var(--green);
+
+    background: transparent;
+    color: var(--green);
 }
 
 .button-outline:hover {
@@ -287,33 +508,38 @@ a {
     color: white;
 }
 
+
 /* =========================================
-   RESERVATION SECTION
+   SECTION LAYOUT
 ========================================= */
 
 .booking-wrap,
 .archive-section {
-    padding: 5rem 1.2rem;
     max-width: 1100px;
     margin: auto;
+    padding: 5rem 1.2rem;
 }
 
 .section-intro {
-    text-align: center;
     margin-bottom: 2.5rem;
+    text-align: center;
 }
 
-.section-intro .eyebrow {
+.eyebrow {
     color: var(--orange-dark);
+
+    font-size: .7rem;
+    font-weight: 800;
+    letter-spacing: .2em;
 }
 
 .section-intro h2 {
-    font-size: clamp(2.5rem, 6vw, 4rem);
-    font-weight: 500;
-
     margin: .6rem 0;
 
     color: var(--dark);
+
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 600;
 }
 
 .section-intro > p:last-child {
@@ -321,26 +547,28 @@ a {
     line-height: 1.6;
 }
 
+
 /* =========================================
    BOOKING FORM
 ========================================= */
 
 .booking-card {
-    background: white;
-
-    padding: 1.5rem;
-
-    box-shadow:
-        0 12px 40px rgba(16, 58, 43, 0.12);
-
-    border-top: 5px solid var(--orange);
-
     display: grid;
+
     grid-template-columns:
         1fr 1fr .8fr 1.4fr;
 
     gap: 1rem;
     align-items: end;
+
+    padding: 1.5rem;
+
+    background: white;
+
+    border-top: 6px solid var(--orange);
+
+    box-shadow:
+        0 12px 40px rgba(16, 58, 43, .12);
 }
 
 .field {
@@ -350,30 +578,28 @@ a {
 }
 
 .field label {
-    font-size: .68rem;
-    letter-spacing: .14em;
-    font-weight: 700;
     color: var(--dark);
+
+    font-size: .68rem;
+    font-weight: 800;
+    letter-spacing: .14em;
 }
 
 .field input,
 .field select {
-    border: 1px solid #D9D9CF;
-    background: #FFFFFF;
-
-    padding: 1rem .6rem;
-
-    min-width: 0;
     width: 100%;
-
-    font: inherit;
-    color: var(--ink);
-
+    min-width: 0;
     height: 57px;
 
-    transition:
-        border-color .2s ease,
-        box-shadow .2s ease;
+    padding: .9rem .7rem;
+
+    border: 1px solid #D9D9CF;
+    border-radius: 0;
+
+    background-color: white;
+    color: var(--ink);
+
+    font: inherit;
 }
 
 .field input:focus,
@@ -383,98 +609,132 @@ a {
     border-color: var(--orange);
 
     box-shadow:
-        0 0 0 3px rgba(242, 106, 33, 0.15);
+        0 0 0 3px rgba(242, 106, 33, .15);
+}
+
+
+/* Guest dropdown */
+
+.field select {
+    padding-right: 2.5rem;
+
+    appearance: none;
+    -webkit-appearance: none;
+
+    cursor: pointer;
+
+    background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23176B45' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 16px;
+}
+
+.field select option {
+    background: white;
+    color: var(--dark);
 }
 
 .privacy-note {
-    text-align: center;
-    font-size: .74rem;
+    margin-top: 1.2rem;
+
     color: var(--muted);
+
+    font-size: .74rem;
+    text-align: center;
 }
 
+
 /* =========================================
-   RESERVATION DENIAL RESULT
+   RESERVATION DENIAL
 ========================================= */
 
 .result {
     max-width: 660px;
     margin: 2.5rem auto 0;
+    padding: 2.5rem;
 
-    background: #FFFFFF;
+    background: white;
 
     border: 3px solid var(--orange);
 
-    padding: 2.5rem;
     text-align: center;
 
-    position: relative;
-
     box-shadow:
-        0 15px 45px rgba(16, 58, 43, 0.1);
+        0 15px 45px rgba(16, 58, 43, .1);
 }
-
-/* Reservation denied stamp */
 
 .result-stamp {
     display: inline-block;
 
-    color: var(--orange-dark);
-    border: 2px solid var(--orange-dark);
-
+    margin-bottom: 1rem;
     padding: .5rem 1rem;
 
+    border: 2px solid var(--orange-dark);
+
+    color: var(--orange-dark);
+
+    font-size: .85rem;
+    font-weight: 800;
     letter-spacing: .17em;
-    font-weight: 700;
 
     transform: rotate(-5deg);
-
-    margin-bottom: 1rem;
 }
 
 .result h2 {
-    font-size: 3.2rem;
     margin: .6rem 0;
+
     color: var(--dark);
+    font-size: 3.2rem;
 }
 
 .result > p:not(.eyebrow) {
-    line-height: 1.8;
     color: var(--muted);
+    line-height: 1.8;
 }
 
 .result-meta {
-    border-top: 1px solid var(--cream-dark);
-
-    padding-top: 1rem;
-
     display: flex;
     justify-content: space-between;
     gap: 1rem;
 
-    font-size: .7rem;
-    letter-spacing: .07em;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+
+    border-top: 1px solid var(--cream-dark);
 
     color: var(--green);
+
+    font-size: .7rem;
+    letter-spacing: .07em;
 }
 
+
 /* =========================================
-   OFFICIAL LODGING POLICY
+   HOSPITALITY POLICY
 ========================================= */
 
 .policy {
+    padding: 5rem 1.2rem;
+
     background:
+        repeating-linear-gradient(
+            135deg,
+            rgba(242, 106, 33, .035) 0 8px,
+            transparent 8px 16px
+        ),
         linear-gradient(
             135deg,
-            #FFE6CC 0%,
-            #FFF0DC 50%,
-            #F6DFC0 100%
+            #FFE6CC,
+            #FFF0DC,
+            #F6DFC0
         );
 
-    padding: 5rem 1.2rem;
-    text-align: center;
+    border-top: 5px solid var(--orange);
+    border-bottom: 5px solid var(--green);
 
-    border-top: 4px solid var(--orange);
-    border-bottom: 4px solid var(--green);
+    text-align: center;
 }
 
 .policy-inner {
@@ -482,51 +742,41 @@ a {
     margin: auto;
 }
 
-.policy .eyebrow {
-    color: var(--orange-dark);
-}
-
 .policy h2 {
-    font-size: clamp(2.7rem, 6vw, 4.6rem);
-    line-height: 1.15;
-    font-weight: 500;
-
     margin: 1rem 0;
 
     color: var(--dark);
+
+    font-size: clamp(2.7rem, 6vw, 4.6rem);
+    font-weight: 600;
+    line-height: 1.15;
 }
 
 .policy-inner > p:not(.eyebrow) {
-    line-height: 1.8;
     color: #4F6154;
+    line-height: 1.8;
 }
-
-/* Official policy seal */
 
 .policy-seal {
     display: inline-block;
 
+    margin-top: 1.5rem;
+    padding: 1rem 1.4rem;
+
     border: 2px solid var(--green);
     border-radius: 100px;
 
-    padding: 1rem 1.4rem;
-
-    font-size: .65rem;
-    font-weight: 700;
-    letter-spacing: .15em;
-
     color: var(--green);
 
-    margin-top: 1.5rem;
+    font-size: .65rem;
+    font-weight: 800;
+    letter-spacing: .15em;
 }
+
 
 /* =========================================
-   HISTORICAL DENIAL ARCHIVES
+   DENIAL ARCHIVES
 ========================================= */
-
-.archive-section {
-    background: var(--cream);
-}
 
 .archive-grid {
     display: grid;
@@ -537,15 +787,13 @@ a {
     gap: 1.3rem;
 }
 
-/* Individual screenshot cards */
-
 .archive-card {
+    overflow: hidden;
+
     background: white;
 
     border: 1px solid #E8DAC8;
-    border-bottom: 4px solid var(--green);
-
-    overflow: hidden;
+    border-bottom: 5px solid var(--green);
 
     transition:
         transform .25s ease,
@@ -559,19 +807,17 @@ a {
     border-bottom-color: var(--orange);
 
     box-shadow:
-        0 12px 30px rgba(16, 58, 43, 0.12);
+        0 12px 30px rgba(16, 58, 43, .12);
 }
-
-/* Screenshot button */
 
 .archive-card button {
     display: block;
 
+    width: 100%;
+    padding: 0;
+
     border: 0;
     background: none;
-
-    padding: 0;
-    width: 100%;
 
     cursor: zoom-in;
 }
@@ -580,8 +826,6 @@ a {
     outline: 3px solid var(--orange);
     outline-offset: -3px;
 }
-
-/* Screenshot preview */
 
 .archive-card img {
     display: block;
@@ -594,59 +838,56 @@ a {
     background: #F5EFE6;
 }
 
-/* Screenshot metadata */
-
 .archive-meta {
     padding: 1.1rem;
 }
 
 .archive-meta strong {
-    font-family:
-        'Playfair Display',
-        Georgia,
-        serif;
-
-    font-size: 1.35rem;
     color: var(--green);
+
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.35rem;
 }
 
 .archive-meta p {
+    color: var(--muted);
+
     font-size: .85rem;
     line-height: 1.5;
-    color: var(--muted);
 }
 
-/* Empty archive message */
-
 .archive-empty {
-    text-align: center;
-    color: var(--muted);
-
     padding: 3rem;
 
     border: 2px dashed var(--orange);
+
     background: #FFF8EF;
+    color: var(--muted);
+
+    text-align: center;
 }
 
+
 /* =========================================
-   IMAGE LIGHTBOX
+   LIGHTBOX
 ========================================= */
 
 .lightbox {
     max-width: min(94vw, 850px);
     max-height: 92vh;
 
+    padding: 1rem;
+
     border: 3px solid var(--orange);
 
     background: white;
-    padding: 1rem;
 
     box-shadow:
-        0 20px 100px rgba(0, 0, 0, 0.5);
+        0 20px 100px rgba(0, 0, 0, .5);
 }
 
 .lightbox::backdrop {
-    background: rgba(9, 43, 32, 0.9);
+    background: rgba(9, 43, 32, .9);
 }
 
 .lightbox img {
@@ -655,33 +896,31 @@ a {
     max-width: 100%;
     max-height: 73vh;
 
-    object-fit: contain;
-
     margin: auto;
+
+    object-fit: contain;
 }
 
 .lightbox p {
-    text-align: center;
     color: var(--dark);
+    text-align: center;
 }
-
-/* Lightbox close button */
 
 .close-lightbox {
     float: right;
 
-    background: var(--orange);
-    color: var(--deep-green);
+    margin-bottom: .5rem;
+    padding: .2rem .65rem;
 
     border: 0;
 
+    background: var(--orange);
+    color: var(--deep-green);
+
     font-size: 1.5rem;
-    font-weight: 700;
+    font-weight: 800;
 
     cursor: pointer;
-
-    padding: .2rem .65rem;
-    margin-bottom: .5rem;
 }
 
 .close-lightbox:hover {
@@ -689,28 +928,28 @@ a {
     color: white;
 }
 
+
 /* =========================================
    FOOTER
 ========================================= */
 
 footer {
+    padding: 3.5rem 1rem;
+
+    border-top: 6px solid var(--orange);
+
     background: var(--deep-green);
     color: var(--cream);
 
     text-align: center;
-    padding: 3.5rem 1rem;
-
-    border-top: 6px solid var(--orange);
 }
 
-footer .footer-brand {
-    font-family:
-        'Playfair Display',
-        Georgia,
-        serif;
-
-    font-size: 1.6rem;
+.footer-brand {
     color: var(--orange-light);
+
+    font-family: 'Roboto Slab', Georgia, serif;
+    font-size: 1.6rem;
+    font-weight: 900;
 }
 
 footer p {
@@ -722,9 +961,9 @@ footer small {
     font-size: .7rem;
 }
 
+
 /* =========================================
-   TABLET RESPONSIVE STYLES
-   Screens 850px and below
+   TABLET
 ========================================= */
 
 @media (max-width: 850px) {
@@ -741,11 +980,25 @@ footer small {
         grid-template-columns:
             repeat(2, minmax(0, 1fr));
     }
+
+    .vacancy-stamp {
+        width: 105px;
+        height: 105px;
+
+        top: 0;
+        right: 0;
+
+        font-size: 1.2rem;
+    }
+
+    .vacancy-stamp span:last-child {
+        font-size: .75rem;
+    }
 }
 
+
 /* =========================================
-   MOBILE RESPONSIVE STYLES
-   Screens 560px and below
+   MOBILE
 ========================================= */
 
 @media (max-width: 560px) {
@@ -755,21 +1008,58 @@ footer small {
     }
 
     .hero {
-        min-height: 560px;
+        min-height: 650px;
         padding: 4rem 1rem;
     }
 
-    .hero-ornament {
-        font-size: .55rem;
+    .hero-location {
+        font-size: .65rem;
+        letter-spacing: .25em;
     }
 
-    .hero h1 {
-        font-size: clamp(3.5rem, 13vw, 5rem);
+    .homecoming-pill {
+        font-size: .75rem;
     }
 
-    .hero::before,
-    .hero::after {
-        font-size: 10rem;
+    .hero-title-main {
+        font-size: clamp(4.2rem, 19vw, 6rem);
+    }
+
+    .hero-title-script {
+        font-size: clamp(3.8rem, 16vw, 5.5rem);
+    }
+
+    .vacancy-stamp {
+        position: relative;
+
+        width: 90px;
+        height: 90px;
+
+        margin: 1.5rem auto 0;
+
+        font-size: 1rem;
+    }
+
+    .vacancy-stamp span:last-child {
+        font-size: .65rem;
+    }
+
+    .hero-quote {
+        font-size: 1rem;
+    }
+
+    .hero-sub {
+        font-size: .65rem;
+        letter-spacing: .15em;
+    }
+
+    .hero-foot {
+        font-size: .6rem;
+        letter-spacing: .13em;
+    }
+
+    .hero-side-label {
+        display: none;
     }
 
     .booking-card {
@@ -809,11 +1099,16 @@ footer small {
     .policy {
         padding: 3.5rem 1rem;
     }
+
+    .policy-seal {
+        font-size: .55rem;
+        line-height: 1.8;
+    }
 }
+
 
 /* =========================================
    ACCESSIBILITY
-   Reduced Motion Preferences
 ========================================= */
 
 @media (prefers-reduced-motion: reduce) {
@@ -823,9 +1118,7 @@ footer small {
     }
 
     .button,
-    .archive-card,
-    .field input,
-    .field select {
+    .archive-card {
         transition: none;
     }
 
