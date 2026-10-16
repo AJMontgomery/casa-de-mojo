@@ -1,12 +1,39 @@
 
+/* =========================================
+   CASA DE MOJO
+   FAMU HOMECOMING INSPIRED THEME
+   Orange • Green • Cream
+========================================= */
+
+/* =========================================
+   GLOBAL COLORS
+========================================= */
+
 :root {
-    --green: #123b32;
-    --dark: #09261f;
-    --gold: #cba760;
-    --cream: #f8f3e8;
-    --ink: #193a30;
-    --muted: #706f65;
+    --orange: #F26A21;
+    --orange-dark: #C94F10;
+    --orange-light: #FFB278;
+
+    --green: #176B45;
+    --green-light: #248556;
+    --dark: #103A2B;
+    --deep-green: #092B20;
+
+    --cream: #FFF4E6;
+    --cream-dark: #F2E4D1;
+
+    --ink: #193A30;
+    --charcoal: #25251F;
+    --muted: #706F65;
+
+    /* Compatibility with existing styles */
+
+    --gold: var(--orange);
 }
+
+/* =========================================
+   GLOBAL RESET
+========================================= */
 
 * {
     box-sizing: border-box;
@@ -33,7 +60,14 @@ a {
     color: inherit;
 }
 
-/* Header */
+::selection {
+    background: var(--orange);
+    color: white;
+}
+
+/* =========================================
+   HEADER / NAVIGATION
+========================================= */
 
 .topbar {
     display: flex;
@@ -41,7 +75,9 @@ a {
     justify-content: space-between;
     gap: 1rem;
     padding: 1.15rem max(5vw, 1rem);
+
     background: var(--cream);
+    border-bottom: 3px solid var(--orange);
 }
 
 .wordmark {
@@ -49,55 +85,75 @@ a {
     font-weight: 700;
     font-size: .85rem;
     letter-spacing: .13em;
+    color: var(--dark);
 }
 
 .mark {
-    color: #ad8847;
+    color: var(--orange);
     font-size: 1.3rem;
 }
 
 .top-note {
     font-size: .64rem;
     letter-spacing: .14em;
-    color: #6d705e;
+    color: var(--green);
+    font-weight: 700;
 }
 
-/* Hero Section */
+/* =========================================
+   HERO SECTION
+========================================= */
 
 .hero {
-    background: radial-gradient(
-        circle at 50% 25%,
-        #285346 0,
-        #123b32 48%,
-        #09261f 100%
-    );
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            #248556 0%,
+            #176B45 38%,
+            #103A2B 75%,
+            #092B20 100%
+        );
+
     min-height: 600px;
+
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
     text-align: center;
     padding: 5rem 1rem;
-    color: #f8f3e8;
+
+    color: var(--cream);
+
     position: relative;
     overflow: hidden;
 }
 
-.hero:before,
-.hero:after {
+/* Decorative background elements */
+
+.hero::before,
+.hero::after {
     content: '✦';
+
     position: absolute;
-    color: #d2b36e22;
+
+    color: rgba(242, 106, 33, 0.12);
     font-size: 18rem;
+
     top: 5%;
     left: -5%;
+
+    pointer-events: none;
 }
 
-.hero:after {
+.hero::after {
     left: auto;
     right: -5%;
     top: 35%;
 }
+
+/* Eyebrow labels */
 
 .hero-ornament,
 .eyebrow {
@@ -107,51 +163,74 @@ a {
 }
 
 .hero-ornament {
-    color: var(--gold);
+    color: var(--orange-light);
     margin-bottom: 2rem;
 }
+
+/* Main title */
 
 .hero h1 {
     font-size: clamp(4rem, 10vw, 8rem);
     line-height: .98;
     font-weight: 500;
     letter-spacing: -.045em;
+
     margin: 1.1rem 0;
+
+    position: relative;
+    z-index: 1;
 }
 
 .hero h1 em {
     font-weight: 500;
-    color: #e4c98e;
+    color: var(--orange-light);
 }
+
+/* Hero description */
 
 .hero-sub {
     font-size: 1rem;
     line-height: 1.8;
-    color: #e5e7da;
+    color: #F8EBDD;
+
+    max-width: 650px;
+
+    position: relative;
+    z-index: 1;
 }
 
 .hero-foot {
     font-size: .65rem;
     letter-spacing: .2em;
-    color: #c7b990;
+    color: var(--orange-light);
     margin-top: 3rem;
 }
 
-/* Buttons */
+/* =========================================
+   BUTTONS
+========================================= */
 
 .button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+
     gap: 1rem;
+
     border: 0;
     text-decoration: none;
     cursor: pointer;
+
     font-weight: 700;
     font-size: .75rem;
     letter-spacing: .09em;
+
     padding: 1.15rem 1.8rem;
-    transition: transform .2s, filter .2s;
+
+    transition:
+        transform .2s ease,
+        filter .2s ease,
+        background .2s ease;
 }
 
 .button:hover {
@@ -159,11 +238,28 @@ a {
     filter: brightness(1.06);
 }
 
-.button-gold {
-    background: var(--gold);
-    color: var(--dark);
-    margin-top: 1.4rem;
+.button:focus-visible {
+    outline: 3px solid var(--orange);
+    outline-offset: 4px;
 }
+
+/* Orange primary button */
+
+.button-gold {
+    background: var(--orange);
+    color: var(--deep-green);
+
+    margin-top: 1.4rem;
+
+    position: relative;
+    z-index: 1;
+}
+
+.button-gold:hover {
+    background: var(--orange-light);
+}
+
+/* Green reservation button */
 
 .button-green {
     background: var(--green);
@@ -171,14 +267,29 @@ a {
     min-height: 57px;
 }
 
+.button-green:hover {
+    background: var(--orange);
+    color: var(--deep-green);
+}
+
+/* Outline button */
+
 .button-outline {
-    border: 1px solid var(--green);
+    border: 2px solid var(--green);
     color: var(--green);
     background: transparent;
+
     margin-top: 1.2rem;
 }
 
-/* Reservation Section */
+.button-outline:hover {
+    background: var(--green);
+    color: white;
+}
+
+/* =========================================
+   RESERVATION SECTION
+========================================= */
 
 .booking-wrap,
 .archive-section {
@@ -193,13 +304,16 @@ a {
 }
 
 .section-intro .eyebrow {
-    color: #a38243;
+    color: var(--orange-dark);
 }
 
 .section-intro h2 {
     font-size: clamp(2.5rem, 6vw, 4rem);
     font-weight: 500;
+
     margin: .6rem 0;
+
+    color: var(--dark);
 }
 
 .section-intro > p:last-child {
@@ -207,12 +321,24 @@ a {
     line-height: 1.6;
 }
 
+/* =========================================
+   BOOKING FORM
+========================================= */
+
 .booking-card {
     background: white;
+
     padding: 1.5rem;
-    box-shadow: 0 10px 40px #123b3214;
+
+    box-shadow:
+        0 12px 40px rgba(16, 58, 43, 0.12);
+
+    border-top: 5px solid var(--orange);
+
     display: grid;
-    grid-template-columns: 1fr 1fr .8fr 1.4fr;
+    grid-template-columns:
+        1fr 1fr .8fr 1.4fr;
+
     gap: 1rem;
     align-items: end;
 }
@@ -227,18 +353,37 @@ a {
     font-size: .68rem;
     letter-spacing: .14em;
     font-weight: 700;
+    color: var(--dark);
 }
 
 .field input,
 .field select {
-    border: 1px solid #dddcd2;
-    background: #fff;
+    border: 1px solid #D9D9CF;
+    background: #FFFFFF;
+
     padding: 1rem .6rem;
+
     min-width: 0;
     width: 100%;
+
     font: inherit;
     color: var(--ink);
+
     height: 57px;
+
+    transition:
+        border-color .2s ease,
+        box-shadow .2s ease;
+}
+
+.field input:focus,
+.field select:focus {
+    outline: none;
+
+    border-color: var(--orange);
+
+    box-shadow:
+        0 0 0 3px rgba(242, 106, 33, 0.15);
 }
 
 .privacy-note {
@@ -247,32 +392,49 @@ a {
     color: var(--muted);
 }
 
-/* Reservation Results */
+/* =========================================
+   RESERVATION DENIAL RESULT
+========================================= */
 
 .result {
     max-width: 660px;
     margin: 2.5rem auto 0;
-    background: #fff;
-    border: 2px solid var(--gold);
+
+    background: #FFFFFF;
+
+    border: 3px solid var(--orange);
+
     padding: 2.5rem;
     text-align: center;
+
     position: relative;
+
+    box-shadow:
+        0 15px 45px rgba(16, 58, 43, 0.1);
 }
+
+/* Reservation denied stamp */
 
 .result-stamp {
     display: inline-block;
-    color: #9c413b;
-    border: 2px solid #9c413b;
+
+    color: var(--orange-dark);
+    border: 2px solid var(--orange-dark);
+
     padding: .5rem 1rem;
+
     letter-spacing: .17em;
     font-weight: 700;
+
     transform: rotate(-5deg);
+
     margin-bottom: 1rem;
 }
 
 .result h2 {
     font-size: 3.2rem;
     margin: .6rem 0;
+    color: var(--dark);
 }
 
 .result > p:not(.eyebrow) {
@@ -281,21 +443,38 @@ a {
 }
 
 .result-meta {
-    border-top: 1px solid #ddd;
+    border-top: 1px solid var(--cream-dark);
+
     padding-top: 1rem;
+
     display: flex;
     justify-content: space-between;
     gap: 1rem;
+
     font-size: .7rem;
     letter-spacing: .07em;
+
+    color: var(--green);
 }
 
-/* Lodging Policy Section */
+/* =========================================
+   OFFICIAL LODGING POLICY
+========================================= */
 
 .policy {
-    background: #e9dfcb;
+    background:
+        linear-gradient(
+            135deg,
+            #FFE6CC 0%,
+            #FFF0DC 50%,
+            #F6DFC0 100%
+        );
+
     padding: 5rem 1.2rem;
     text-align: center;
+
+    border-top: 4px solid var(--orange);
+    border-bottom: 4px solid var(--green);
 }
 
 .policy-inner {
@@ -303,66 +482,132 @@ a {
     margin: auto;
 }
 
+.policy .eyebrow {
+    color: var(--orange-dark);
+}
+
 .policy h2 {
     font-size: clamp(2.7rem, 6vw, 4.6rem);
     line-height: 1.15;
     font-weight: 500;
+
     margin: 1rem 0;
+
+    color: var(--dark);
 }
 
 .policy-inner > p:not(.eyebrow) {
     line-height: 1.8;
-    color: #5e6558;
+    color: #4F6154;
 }
+
+/* Official policy seal */
 
 .policy-seal {
     display: inline-block;
-    border: 1px solid #a58e64;
+
+    border: 2px solid var(--green);
     border-radius: 100px;
+
     padding: 1rem 1.4rem;
+
     font-size: .65rem;
+    font-weight: 700;
     letter-spacing: .15em;
+
+    color: var(--green);
+
     margin-top: 1.5rem;
 }
 
-/* Screenshot Archive */
+/* =========================================
+   HISTORICAL DENIAL ARCHIVES
+========================================= */
+
+.archive-section {
+    background: var(--cream);
+}
 
 .archive-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
     gap: 1.3rem;
 }
 
+/* Individual screenshot cards */
+
 .archive-card {
     background: white;
-    border: 1px solid #e3ded2;
+
+    border: 1px solid #E8DAC8;
+    border-bottom: 4px solid var(--green);
+
     overflow: hidden;
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        border-color .25s ease;
 }
+
+.archive-card:hover {
+    transform: translateY(-5px);
+
+    border-bottom-color: var(--orange);
+
+    box-shadow:
+        0 12px 30px rgba(16, 58, 43, 0.12);
+}
+
+/* Screenshot button */
 
 .archive-card button {
     display: block;
+
     border: 0;
     background: none;
+
     padding: 0;
     width: 100%;
+
     cursor: zoom-in;
 }
 
+.archive-card button:focus-visible {
+    outline: 3px solid var(--orange);
+    outline-offset: -3px;
+}
+
+/* Screenshot preview */
+
 .archive-card img {
     display: block;
+
     width: 100%;
     height: 270px;
+
     object-fit: contain;
-    background: #f1eee7;
+
+    background: #F5EFE6;
 }
+
+/* Screenshot metadata */
 
 .archive-meta {
     padding: 1.1rem;
 }
 
 .archive-meta strong {
-    font-family: 'Playfair Display', Georgia, serif;
+    font-family:
+        'Playfair Display',
+        Georgia,
+        serif;
+
     font-size: 1.35rem;
+    color: var(--green);
 }
 
 .archive-meta p {
@@ -371,77 +616,119 @@ a {
     color: var(--muted);
 }
 
+/* Empty archive message */
+
 .archive-empty {
     text-align: center;
     color: var(--muted);
+
     padding: 3rem;
-    border: 1px dashed #c5bba6;
+
+    border: 2px dashed var(--orange);
+    background: #FFF8EF;
 }
 
-/* Image Lightbox */
+/* =========================================
+   IMAGE LIGHTBOX
+========================================= */
 
 .lightbox {
     max-width: min(94vw, 850px);
     max-height: 92vh;
-    border: 0;
+
+    border: 3px solid var(--orange);
+
     background: white;
     padding: 1rem;
-    box-shadow: 0 20px 100px #0008;
+
+    box-shadow:
+        0 20px 100px rgba(0, 0, 0, 0.5);
 }
 
 .lightbox::backdrop {
-    background: #000c;
+    background: rgba(9, 43, 32, 0.9);
 }
 
 .lightbox img {
     display: block;
+
     max-width: 100%;
     max-height: 73vh;
+
     object-fit: contain;
+
     margin: auto;
 }
 
 .lightbox p {
     text-align: center;
+    color: var(--dark);
 }
+
+/* Lightbox close button */
 
 .close-lightbox {
     float: right;
-    background: var(--green);
-    color: white;
+
+    background: var(--orange);
+    color: var(--deep-green);
+
     border: 0;
+
     font-size: 1.5rem;
+    font-weight: 700;
+
     cursor: pointer;
+
     padding: .2rem .65rem;
     margin-bottom: .5rem;
 }
 
-/* Footer */
+.close-lightbox:hover {
+    background: var(--green);
+    color: white;
+}
+
+/* =========================================
+   FOOTER
+========================================= */
 
 footer {
-    background: var(--dark);
-    color: #f8f3e8;
+    background: var(--deep-green);
+    color: var(--cream);
+
     text-align: center;
     padding: 3.5rem 1rem;
+
+    border-top: 6px solid var(--orange);
 }
 
 footer .footer-brand {
-    font-family: 'Playfair Display', Georgia, serif;
+    font-family:
+        'Playfair Display',
+        Georgia,
+        serif;
+
     font-size: 1.6rem;
+    color: var(--orange-light);
 }
 
 footer p {
-    color: #d6c59e;
+    color: #F5D8BC;
 }
 
 footer small {
-    color: #c0c8bd;
+    color: #C0D4C6;
     font-size: .7rem;
 }
 
-/* Tablet Responsive Styles */
+/* =========================================
+   TABLET RESPONSIVE STYLES
+   Screens 850px and below
+========================================= */
 
 @media (max-width: 850px) {
+
     .booking-card {
         grid-template-columns: 1fr 1fr;
     }
@@ -451,23 +738,38 @@ footer small {
     }
 
     .archive-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
     }
 }
 
-/* Mobile Responsive Styles */
+/* =========================================
+   MOBILE RESPONSIVE STYLES
+   Screens 560px and below
+========================================= */
 
 @media (max-width: 560px) {
+
     .top-note {
         display: none;
     }
 
     .hero {
         min-height: 560px;
+        padding: 4rem 1rem;
     }
 
     .hero-ornament {
         font-size: .55rem;
+    }
+
+    .hero h1 {
+        font-size: clamp(3.5rem, 13vw, 5rem);
+    }
+
+    .hero::before,
+    .hero::after {
+        font-size: 10rem;
     }
 
     .booking-card {
@@ -491,6 +793,10 @@ footer small {
         padding: 1.5rem;
     }
 
+    .result h2 {
+        font-size: 2.5rem;
+    }
+
     .result-meta {
         flex-direction: column;
     }
@@ -498,5 +804,33 @@ footer small {
     .booking-wrap,
     .archive-section {
         padding: 3.5rem 1rem;
+    }
+
+    .policy {
+        padding: 3.5rem 1rem;
+    }
+}
+
+/* =========================================
+   ACCESSIBILITY
+   Reduced Motion Preferences
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    .button,
+    .archive-card,
+    .field input,
+    .field select {
+        transition: none;
+    }
+
+    .button:hover,
+    .archive-card:hover {
+        transform: none;
     }
 }
