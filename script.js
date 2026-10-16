@@ -29,12 +29,6 @@ const posts = [
         caption: 'Official Casa de Mojo lodging announcement.'
     },
     {
-        year: '2025',
-        title: 'January 31, 2025',
-        file: 'images/01312025.jpeg',
-        caption: 'Official Casa de Mojo lodging announcement.'
-    },
-    {
         year: '2024',
         title: 'September 28, 2024',
         file: 'images/09282024.jpeg',
