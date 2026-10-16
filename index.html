@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#123b32">
+  <meta name="description" content="Casa de Mojo: Homecoming lodging availability and historical reservation notices.">
+  <title>Casa de Mojo | Reservations</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar"><a href="#top" class="wordmark"><span class="mark">✦</span> CASA DE MOJO</a><span class="top-note">PRIVATE RESIDENCE · NO VACANCY</span></header>
+  <main id="top">
+    <section class="hero">
+      <div class="hero-ornament">✦ &nbsp; ESTABLISHED IN THE ART OF SAYING NO &nbsp; ✦</div>
+      <p class="eyebrow">WELCOME TO YOUR NEXT NON-DESTINATION</p>
+      <h1>Casa<br><em>de Mojo</em></h1>
+      <p class="hero-sub">There will be no lodging at mi casa.<br>Homecoming accommodations exclusively unavailable.</p>
+      <a href="#booking" class="button button-gold">Explore Availability <span aria-hidden="true">↗</span></a>
+      <p class="hero-foot">A HOME AWAY FROM YOUR HOME? NOT THIS ONE.</p>
+    </section>
+    <section id="booking" class="booking-wrap">
+      <div class="section-intro"><p class="eyebrow">THE RESERVATION DESK</p><h2>Request your stay.</h2><p>We look forward to declining your reservation.</p></div>
+      <form id="booking-form" class="booking-card">
+        <div class="field"><label for="checkin">CHECK-IN</label><input id="checkin" type="date" required></div>
+        <div class="field"><label for="checkout">CHECK-OUT</label><input id="checkout" type="date" required></div>
+        <div class="field"><label for="guests">GUESTS</label><select id="guests"><option value="1">1 guest</option><option value="2">2 guests</option><option value="3">3 guests</option><option value="4">4 guests</option><option value="5+">5+ guests (bold)</option></select></div>
+        <button class="button button-green" type="submit">CHECK AVAILABILITY →</button>
+      </form>
+      <p class="privacy-note">For entertainment only. Dates and guest counts stay on your device.</p>
+      <div id="result" class="result" role="status" aria-live="polite" hidden>
+        <div class="result-stamp">REQUEST DENIED</div><p class="eyebrow">OFFICIAL RESERVATION RESPONSE</p>
+        <h2>Absolutely not.</h2><p>Thank you for your interest in the House of Mojo. Unfortunately, no rooms are available for your requested dates. Or any other dates.</p>
+        <div class="result-meta"><span>CONFIRMATION NUMBER</span><strong>NO-ROOM-FOR-YOU</strong></div>
+        <a class="button button-outline" href="#archive">View Previous Announcements ↓</a>
+      </div>
+    </section>
+    <section class="policy"><div class="policy-inner"><p class="eyebrow">OUR HOSPITALITY PROMISE</p><h2>Zero rooms.<br>Infinite reminders.</h2><p>For years, the management has made the policy abundantly clear. Still, inquiries persist. Please consult the historical record below.</p><span class="policy-seal">NO LODGING · NO EXCEPTIONS · NO LODGING</span></div></section>
+    <section id="archive" class="archive-section"><div class="section-intro"><p class="eyebrow">THE OFFICIAL RECORD</p><h2>The Denial Archives</h2><p>Actual announcements from the management, preserved for future generations of hopeful guests.</p></div>
+      <div id="archive-grid" class="archive-grid"></div>
+      <p id="archive-empty" class="archive-empty" hidden>No screenshots have been added yet. Management's position remains unchanged.</p>
+    </section>
+  </main>
+  <footer><div class="footer-brand">CASA DE MOJO</div><p>Thank you for not staying with us.</p><small>© 2026 Casa de Mojo. All reservations refused. A parody site; no actual accommodations offered.</small></footer>
+  <dialog id="lightbox" class="lightbox"><button id="close-lightbox" class="close-lightbox" aria-label="Close image">×</button><img id="lightbox-image" alt=""><p id="lightbox-caption"></p></dialog>
+  <script src="script.js"></script>
+</body>
+</html>
