@@ -13,7 +13,7 @@ const posts = [
     {
         year: '2026',
         title: 'January 29, 2026',
-        file: 'images/09292026.jpeg',
+        file: 'images/01292026.jpeg',
         caption: 'Official Casa de Mojo lodging announcement.'
     },
     {
@@ -90,8 +90,8 @@ const posts = [
     },
     {
         year: '2022',
-        title: 'July 22, 2022',
-        file: 'images/07222022.jpeg',
+        title: 'July 07, 2022',
+        file: 'images/07072022.jpeg',
         caption: 'Official Casa de Mojo lodging announcement.'
     },
     {
